@@ -5,21 +5,21 @@ Cls
 ViewWindow 1,127,0,1,61
 
 Text 1,1,"PREPARATION:"
-Text 7,1,"ºMELANGER LE DECK"
-Text 13,1,"ºCHAQUE JOUEUR PIOCHE 1 CARTE"
+Text 7,1,"ÂºMELANGER LE DECK"
+Text 13,1,"ÂºCHAQUE JOUEUR PIOCHE 1 CARTE"
 Text 25,1,"DEROULEMENT DU TOUR:"
 
-Text 31,1,"ºLE JOUEUR PIOCHE UNE CARTE"
+Text 31,1,"ÂºLE JOUEUR PIOCHE UNE CARTE"
 Text 37,1," (IL A DONC 2 CARTES)"
-Text 43,1,"ºIL JOUE LA CARTE"
-Text 49,1,"ºLES EFFECTS S'APPLIQUENT"
+Text 43,1,"ÂºIL JOUE LA CARTE"
+Text 49,1,"ÂºLES EFFECTS S'APPLIQUENT"
 
 Text 58,120,"#E69B"
 
 Do
-GetkeyãK
-LpWhile KÈ31 And KÈ47
-K=47×Return
+GetkeyÃ£K
+LpWhile KÃˆ31 And KÃˆ47
+K=47Ã—Return
 
 Cls
 
@@ -35,7 +35,7 @@ F-Line 10,25,40,25
 Text 40,14,Str 1
 
 Text 14,60,"Cible :"
-Text 20,60," º1 adversaire"
+Text 20,60," Âº1 adversaire"
 Text 32,60,"Si vous devinez"
 Text 38,60,"la  carte de"
 Text 44,60,"votre adversaire"
@@ -44,9 +44,9 @@ Text 50,60,"il est elimine."
 Text 58,120,"#E69B"
 
 Do
-GetkeyãK
-LpWhile KÈ31 And KÈ47
-K=47×Return
+GetkeyÃ£K
+LpWhile KÃˆ31 And KÃˆ47
+K=47Ã—Return
 
 Cls
 Text 14,14,"2"
@@ -58,14 +58,14 @@ F-Line 10,42,40,42
 F-Line 10,25,40,25
 Text 40,14,Str 2
 Text 14,60,"Cible :"
-Text 20,60," º1 adversaire"
+Text 20,60," Âº1 adversaire"
 Text 32,60,"Le joueur cible"
 Text 38,60,"vous revele sa"
 Text 44,60,"carte."
 Text 50,60,""
 Text 58,120,"#E69B"
 Do
-GetkeyãK
+GetkeyÃ£K
 LpWhile Not K
 
 Cls
@@ -78,7 +78,7 @@ F-Line 10,42,40,42
 F-Line 10,25,40,25
 Text 40,14,Str 3
 Text 14,60,"Cible :"
-Text 20,60," º1 adversaire"
+Text 20,60," Âº1 adversaire"
 Text 32,60,"Revelez-vous vos"
 Text 38,60,"cartes."
 Text 38,90,"Celui"
@@ -94,7 +94,7 @@ Text 3,30,"valeur"
 
 Text 58,120,"#E69B"
 Do
-GetkeyãK
+GetkeyÃ£K
 LpWhile Not K
 
 Cls
@@ -107,7 +107,7 @@ F-Line 10,42,40,42
 F-Line 10,25,40,25
 Text 40,14,Str 4
 Text 14,60,"Cible :"
-Text 20,60," ºSelf"
+Text 20,60," ÂºSelf"
 Text 32,60,"Previent votre"
 Text 38,60,"prochaine"
 Text 44,60,"elimination."
@@ -115,7 +115,7 @@ Text 50,60,"(Jusqu'a la FIN de votre"
 Text 56,60,"prochain tour)"
 Text 58,120,"#E69B"
 Do
-GetkeyãK
+GetkeyÃ£K
 LpWhile Not K
 Cls
 Text 14,14,"5"
@@ -127,14 +127,14 @@ F-Line 10,42,40,42
 F-Line 10,25,40,25
 Text 40,14,Str 5
 Text 14,60,"Cible :"
-Text 20,60," º1 joueur"
+Text 20,60," Âº1 joueur"
 Text 32,60,"Le joueur cible"
 Text 38,60,"defausse sa"
 Text 44,60,"carte et en"
 Text 50,60,"pioche une autre."
 Text 58,120,"#E69B"
 Do
-GetkeyãK
+GetkeyÃ£K
 LpWhile Not K
 
 Cls
@@ -147,14 +147,14 @@ F-Line 10,42,40,42
 F-Line 10,25,40,25
 Text 40,14,Str 6
 Text 14,60,"Cible :"
-Text 20,60," º1 joueur"
+Text 20,60," Âº1 joueur"
 Text 32,60,"Le joueur cible"
 Text 38,60,"echange sa carte"
 Text 44,60,"avec la votre."
 Text 50,60,""
 Text 58,120,"#E69B"
 Do
-GetkeyãK
+GetkeyÃ£K
 LpWhile Not K
 
 
@@ -175,7 +175,7 @@ Text 44,60,"carte."
 Text 50,60,"Aucun effet."
 Text 58,120,"#E69B"
 Do
-GetkeyãK
+GetkeyÃ£K
 LpWhile Not K
 Cls
 Text 14,14,"8"
@@ -194,7 +194,7 @@ Text 44,60,"DEFAUSSEZ cette"
 Text 50,60,"carte."
 Text 58,120,"#E69B"
 Do
-GetkeyãK
+GetkeyÃ£K
 LpWhile Not K
 
 Cls
@@ -212,7 +212,7 @@ Text 61,1,""
 
 Text 58,120,"#E69B"
 Do
-GetkeyãK
+GetkeyÃ£K
 LpWhile Not K
 
 Cls
@@ -221,7 +221,7 @@ Text 7,1," Lorsque vous devez cibler un"
 Text 13,1,"joueur, toutes les cibles valides"
 Text 19,1,"vous seront presentees."
 Text 25,1,"Les joueurs ayant un 4 actif"
-Text 31,1,"ont un Ñ sous leur numero."
+Text 31,1,"ont un Ã‘ sous leur numero."
 Text 37,1,"Selectionnez la cible avec"
 Text 43,1,"les fleches."
 Text 49,1,"Validez avec EXE."
@@ -230,7 +230,7 @@ Text 61,1,""
 
 Text 58,120,"#E69B"
 Do
-GetkeyãK
+GetkeyÃ£K
 LpWhile Not K
 
 Return
