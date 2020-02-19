@@ -3,8 +3,8 @@ Lbl 4
 Menu "Decks Predefinis","CLASSIQUE",1,"",2,"",3
 
 Lbl 1
-16„Dim List 9
-{1,1,1,1,1,2,2,3,3,4,4,5,5,6,7,8}„List 9
+16√£Dim List 9
+{1,1,1,1,1,2,2,3,3,4,4,5,5,6,7,8}√£List 9
 Return
 
 Lbl 2
