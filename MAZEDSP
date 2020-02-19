@@ -1,0 +1,21 @@
+Filename:..DPHD
+'On efface l'écran
+Cls
+'On affiche la position du joueur
+Text 6Y-11,4X-7,"#E6A6"
+
+'Pour chaque case de la matrice du terrain, on affiche le sprite correspondant
+For 2ãI To 32
+For 2ãJ To 11
+'Mat N[I,J]È0×Text 6J-11,4I-7,Mat N[I,J]
+Mat N[I,J]=31×Text 6J-11,4I-7,"P"
+Mat N[I,J]=29×Text 6J-11,4I-7,"#E6A5"
+Mat N[I,J]=23×Text 6J-11,4I-7,"À"
+Mat N[I,J]=19×Text 6J-11,4I-7,"#E69D"
+Mat N[I,J]=17×Text 6J-11,4I-7,"#E69C"
+Mat N[I,J]=11×Text 6J-11,4I-7,"#E69B"
+Mat N[I,J]=13×Text 6J-11,4I-7,"#E69A"
+Mat N[I,J]=41×Text 6J-11,4I-7,"="
+Mat N[I,J]=43×Text 6J-11,4I-7,"H"
+Next
+Next
