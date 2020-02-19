@@ -1,0 +1,63 @@
+Filename:PLAYNEW
+'Selection de la carte piochée par défaut
+1ãO
+'Recherche de la carte en  main
+List 6[T]ãH
+'Selectionner la carte en main si  c'est  un 7
+H=7×2ãO
+
+'Marquage pour boucle
+Lbl 1
+'Actualiser l'écran
+Prog "PLAYVHD"
+
+'Attendre
+0ãK
+For 1ãI To 250
+Next
+
+'Player Input
+Do
+GetkeyãK
+LpWhile KÈ38 And KÈ27 And KÈ31
+
+
+'Si le joueur valide la selection
+If K=31
+Then 
+'Si la carte du deck est selectionnée alors
+'Elle est mise dans la pile de défausse
+O=1×DãList 3[P]
+'La dernière carte jouée prend sa valeur
+O=1×DãL
+O=1×H=7×Goto 1
+O=1×DãList 3[P]
+O=1×DãL
+'Si la carte en main  est selectionnée alors
+'Si la carte du deck est un 7 l'action est annulée
+'La carte est mise dnasl a pile de défausse
+'La dernière jouée prend sa valeur
+'La carte du deck est mise dans la  main  du  joueur
+O=2×D=7×Goto 1
+O=2×HãList 3[P]
+O=2×HãL
+O=2×DãList 6[T]
+IfEnd
+
+'Selection de la carte en main
+If K=27
+Then If DÈ7
+Then 2ãO
+Goto 1
+Else Goto 1
+IfEnd
+IfEnd
+
+'Selection de  la carte du deck
+If K=38
+Then If HÈ7
+Then 1ãO
+Goto 1
+Else Goto 1
+IfEnd
+IfEnd
