@@ -1,0 +1,218 @@
+Filename:MORPION3
+
+'Initialisation des matrices et des variables
+'Chaque matrice à une grille de morpion
+{3,3ãDim Mat D
+{3,3ãDim Mat F
+{3,3ãDim Mat E
+Fill(0,Mat D)
+Fill(0,Mat E)
+Fill(0,Mat F)
+'Les variables D,E,F correspondent à l'état des grilles
+'à  0  la grille  est  jouable, de 1 à 8, il y a un alignement
+'à 9 il n'y a plus de place.
+'La variable P correspond au joueur qui doit jouer
+'La variable G correspond à la grille active
+'La variable V correspond au  gagnant
+1ãP
+0ãG
+0ãD
+0ãE
+0ãF
+0ãV
+
+'Initialisation de l'affichage en  mode graphique
+ViewWindow 127,1,0,63,1,0
+'Affichage des fleches a droite et a gauche de la grille
+Text 30,15,"#E69A"
+Text 30,112,"#E69B"
+'Affichage de la grille
+F-Line 55,8,55,55
+F-Line 73,8,73,55
+F-Line 36,23,91,23
+F-Line 36,39,91,39
+
+'Marquage pour la boucle principale (à la fin d'un tour, on passe au tour suivant)
+Lbl 1
+'Affichage du joueur à qui doit jouer
+P=1×Text 15,5,"X"
+P=2×Text 15,5,"O"
+
+'Attente d'input
+'input possible : 1 2 3 4 5 6 7 8 9 pour placer sur la grille
+'fleche de droite et de gauche pour changer de  grille
+0ãK
+Do
+GetkeyãK
+LpWhile KÈ27 And KÈ38 And KÈ52 And KÈ53 And KÈ54 And KÈ62 And KÈ63 And KÈ64 And KÈ72 And KÈ73 And KÈ74
+
+'Affichage d'un signe = lorsque qu'aucun input n'est  possible
+P=1×Text 15,5,"="
+
+'Si le joueur appuie sur la flèche, la grille active change (terrain de droite)
+K=27×G+1ãG
+K=27×G=2×-1ãG
+'Actualisation de l'écran
+K=27×Prog "MORP3DSP"
+'Retour au début de la  boucle
+K=27×Goto 1
+
+'Si le joueur appuie sur la flèche, la grille active change  (terrain de  gauche)
+K=38×G-1ãG
+K=38×G=-2×1ãG
+'Actualisation de l'écran
+K=38×Prog "MORP3DSP"
+'Retour au début de la  boucle
+K=38×Goto 1
+
+'Si la grille active est la grille G=0, et que cette grille est jouable (E=0)
+If G=0 And E=0
+'Alors si la case est vide, place la marque du joueur dans cete case
+'Et passe au joueur suivant.
+Then 
+K=52×Mat E[3,3]=0×P+1ãP
+K=52×Mat E[3,3]=0×P-1ãMat E[3,3]
+K=62×Mat E[3,2]=0×P+1ãP
+K=62×Mat E[3,2]=0×P-1ãMat E[3,2]
+K=72×Mat E[3,1]=0×P+1ãP
+K=72×Mat E[3,1]=0×P-1ãMat E[3,1]
+K=53×Mat E[2,3]=0×P+1ãP
+K=53×Mat E[2,3]=0×P-1ãMat E[2,3]
+K=63×Mat E[2,2]=0×P+1ãP
+K=63×Mat E[2,2]=0×P-1ãMat E[2,2]
+K=73×Mat E[2,1]=0×P+1ãP
+K=73×Mat E[2,1]=0×P-1ãMat E[2,1]
+K=54×Mat E[1,3]=0×P+1ãP
+K=54×Mat E[1,3]=0×P-1ãMat E[1,3]
+K=64×Mat E[1,2]=0×P+1ãP
+K=64×Mat E[1,2]=0×P-1ãMat E[1,2]
+K=74×Mat E[1,1]=0×P+1ãP
+K=74×Mat E[1,1]=0×P-1ãMat E[1,1]
+IfEnd
+
+'Meme chose pour la grille G=1 (F=0)
+If G=1 And F=0
+Then 
+K=52×Mat F[3,3]=0×P+1ãP
+K=52×Mat F[3,3]=0×P-1ãMat F[3,3]
+K=62×Mat F[3,2]=0×P+1ãP
+K=62×Mat F[3,2]=0×P-1ãMat F[3,2]
+K=72×Mat F[3,1]=0×P+1ãP
+K=72×Mat F[3,1]=0×P-1ãMat F[3,1]
+K=53×Mat F[2,3]=0×P+1ãP
+K=53×Mat F[2,3]=0×P-1ãMat F[2,3]
+K=63×Mat F[2,2]=0×P+1ãP
+K=63×Mat F[2,2]=0×P-1ãMat F[2,2]
+K=73×Mat F[2,1]=0×P+1ãP
+K=73×Mat F[2,1]=0×P-1ãMat F[2,1]
+K=54×Mat F[1,3]=0×P+1ãP
+K=54×Mat F[1,3]=0×P-1ãMat F[1,3]
+K=64×Mat F[1,2]=0×P+1ãP
+K=64×Mat F[1,2]=0×P-1ãMat F[1,2]
+K=74×Mat F[1,1]=0×P+1ãP
+K=74×Mat F[1,1]=0×P-1ãMat F[1,1]
+IfEnd
+
+'Meme chose pour la grille G=-1 (D=0)
+If G=-1 And D=0
+Then 
+K=52×Mat D[3,3]=0×P+1ãP
+K=52×Mat D[3,3]=0×P-1ãMat D[3,3]
+K=62×Mat D[3,2]=0×P+1ãP
+K=62×Mat D[3,2]=0×P-1ãMat D[3,2]
+K=72×Mat D[3,1]=0×P+1ãP
+K=72×Mat D[3,1]=0×P-1ãMat D[3,1]
+K=53×Mat D[2,3]=0×P+1ãP
+K=53×Mat D[2,3]=0×P-1ãMat D[2,3]
+K=63×Mat D[2,2]=0×P+1ãP
+K=63×Mat D[2,2]=0×P-1ãMat D[2,2]
+K=73×Mat D[2,1]=0×P+1ãP
+K=73×Mat D[2,1]=0×P-1ãMat D[2,1]
+K=54×Mat D[1,3]=0×P+1ãP
+K=54×Mat D[1,3]=0×P-1ãMat D[1,3]
+K=64×Mat D[1,2]=0×P+1ãP
+K=64×Mat D[1,2]=0×P-1ãMat D[1,2]
+K=74×Mat D[1,1]=0×P+1ãP
+K=74×Mat D[1,1]=0×P-1ãMat D[1,1]
+IfEnd
+
+'Si la grille E est jouable, on verifie si elle est toujours jouable.
+'On cherche si il y a 3 marques d'un meme joueur à la suite.
+'Si c'est le cas, on affecte a E la valeur de l'alignement
+'(Dans  ce  cas E est  différent de 0 donc n'est plus jouable)
+If E=0
+Then 
+If Mat E[2,2]È0
+Then 
+Mat E[2,2]=Mat E[1,2] And Mat E[2,2]=Mat E[3,2]×3ãE
+Mat E[2,2]=Mat E[2,1] And Mat E[2,2]=Mat E[2,3]×4ãE
+Mat E[2,2]=Mat E[1,1] And Mat E[2,2]=Mat E[3,3]×5ãE
+Mat E[2,2]=Mat E[1,3] And Mat E[2,2]=Mat E[3,1]×6ãE
+IfEnd
+Mat E[2,1]=Mat E[1,1] And Mat E[2,1]=Mat E[3,1] And Mat E[2,1]È0×1ãE
+Mat E[1,2]=Mat E[1,1] And Mat E[1,2]=Mat E[1,3] And Mat E[1,2]È0×2ãE
+Mat E[3,2]=Mat E[3,1] And Mat E[3,2]=Mat E[3,3] And Mat E[3,2]È0×7ãE
+Mat E[2,3]=Mat E[1,3] And Mat E[2,3]=Mat E[3,3] And Mat E[2,3]È0×8ãE
+E=0×Mat E[1,1]È0×Mat E[1,2]È0×Mat E[1,3]È0×Mat E[2,1]È0×Mat E[2,2]È0×Mat E[2,3]È0×Mat E[3,1]È0×Mat E[3,2]È0×Mat E[3,3]È0×9ãE
+IfEnd
+
+'Meme chose pour la grille F
+If F=0
+Then 
+If Mat F[2,2]È0
+Then 
+Mat F[2,2]=Mat F[1,2] And Mat F[2,2]=Mat F[3,2]×3ãF
+Mat F[2,2]=Mat F[2,1] And Mat F[2,2]=Mat F[2,3]×PãF
+Mat F[2,2]=Mat F[1,1] And Mat F[2,2]=Mat F[3,3]×5ãF
+Mat F[2,2]=Mat F[1,3] And Mat F[2,2]=Mat F[3,1]×6ãF
+IfEnd
+Mat F[2,1]=Mat F[1,1] And Mat F[2,1]=Mat F[3,1] And Mat F[2,1]È0×1ãF
+Mat F[1,2]=Mat F[1,1] And Mat F[1,2]=Mat F[1,3] And Mat F[1,2]È0×2ãF
+Mat F[3,2]=Mat F[3,1] And Mat F[3,2]=Mat F[3,3] And Mat F[3,2]È0×7ãF
+Mat F[2,3]=Mat F[1,3] And Mat F[2,3]=Mat F[3,3] And Mat F[2,3]È0×8ãF
+F=0×Mat F[1,1]È0×Mat F[1,2]È0×Mat F[1,3]È0×Mat F[2,1]È0×Mat F[2,2]È0×Mat F[2,3]È0×Mat F[3,1]È0×Mat F[3,2]È0×Mat F[3,3]È0×9ãF
+IfEnd
+
+'Meme chose pour la grille D
+If D=0
+Then 
+If Mat D[2,2]È0
+Then 
+Mat D[2,2]=Mat D[1,2] And Mat D[2,2]=Mat D[3,2]×3ãD
+Mat D[2,2]=Mat D[2,1] And Mat D[2,2]=Mat D[2,3]×PãD
+Mat D[2,2]=Mat D[1,1] And Mat D[2,2]=Mat D[3,3]×5ãD
+Mat D[2,2]=Mat D[1,3] And Mat D[2,2]=Mat D[3,1]×6ãD
+IfEnd
+Mat D[2,1]=Mat D[1,1] And Mat D[2,1]=Mat D[3,1] And Mat D[2,1]È0×1ãD
+Mat D[1,2]=Mat D[1,1] And Mat D[1,2]=Mat D[1,3] And Mat D[1,2]È0×2ãD
+Mat D[3,2]=Mat D[3,1] And Mat D[3,2]=Mat D[3,3] And Mat D[3,2]È0×7ãD
+D=0×Mat D[2,3]=Mat D[1,3] And Mat D[2,3]=Mat D[3,3] And Mat D[2,3]È0×8ãD
+Mat D[1,1]È0×Mat D[1,2]È0×Mat D[1,3]È0×Mat D[2,1]È0×Mat D[2,2]È0×Mat D[2,3]È0×Mat D[3,1]È0×Mat D[3,2]È0×Mat D[3,3]È0×9ãD
+IfEnd
+
+'Si P=3 alors on retourne a P=1 (il n'y a que 2 joueurs)
+P=3×1ãP
+'On actualise l'écran
+Prog "MORP3DSP"
+
+'Si aucune grille n'est jouable alors on sort de la boucle principale
+DÈ0×EÈ0×FÈ0×Goto 2
+'On retourne au début de la boucle principale
+Goto 1
+'Marqueur pour sortir de  la  boucle
+Lbl 2
+'On efface l'écran
+Cls
+'On verifie qu'il n'y a pas ex aequo
+G=-1×D=9×3ãV
+G=1×F=9×3ãV
+G=0×E=9×3ãV
+
+
+'Si il n'y a pas ex aequo alors on affecte la victoire au joueur concerné
+VÈ3×PãV
+VÈ3×Locate 5,4,"PLAYER   WINS"
+'On affiche le vainqueur en fonction de la valeur de V
+V=1×Locate 12,4,"X"
+V=2×Locate 12,4,"O"
+V=3×Locate 10,4,"DRAW"
