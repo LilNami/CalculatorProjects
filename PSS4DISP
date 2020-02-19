@@ -1,0 +1,31 @@
+Filename:PSS4DISP
+For 1ãI To B
+PxlOn 3+6ÀI,30+7A
+PxlOn 3+6ÀI,31+7A
+PxlOn 3+6ÀI,32+7A
+PxlOn 3+6ÀI,33+7A
+PxlOn 5+6ÀI,30+7A
+PxlOn 5+6ÀI,31+7A
+PxlOn 5+6ÀI,32+7A
+PxlOn 5+6ÀI,33+7A
+PxlOn 4+6ÀI,30+7A
+PxlOn 4+6ÀI,33+7A
+P=2×PxlOn 4+6ÀI,31+7A
+P=2×PxlOn 4+6ÀI,32+7A
+If IÈ1
+Then PxlOff 3+6À(I-1),30+7A
+PxlOff 3+6À(I-1),31+7A
+PxlOff 3+6À(I-1),32+7A
+PxlOff 3+6À(I-1),33+7A
+PxlOff 5+6À(I-1),30+7A
+PxlOff 5+6À(I-1),31+7A
+PxlOff 5+6À(I-1),32+7A
+PxlOff 5+6À(I-1),33+7A
+PxlOff 4+6À(I-1),30+7A
+PxlOff 4+6À(I-1),33+7A
+P=2×PxlOff 4+6À(I-1),31+7A
+P=2×PxlOff 4+6À(I-1),32+7A
+IfEnd
+Next
+P=1×Text 1,1,"#E6A6"
+P=2×Text 1,1,"#E6A5"
