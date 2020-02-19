@@ -1,0 +1,93 @@
+Filename:PENDUDSP
+P=11×Goto 4
+G=1×Goto 2
+G=2×Goto 3
+AãI
+List 5[I]=76×Text 1,5I,"A"
+List 5[I]=66×Text 1,5I,"B"
+List 5[I]=56×Text 1,5I,"C"
+List 5[I]=46×Text 1,5I,"D"
+List 5[I]=36×Text 1,5I,"E"
+List 5[I]=26×Text 1,5I,"F"
+List 5[I]=75×Text 1,5I,"G"
+List 5[I]=65×Text 1,5I,"H"
+List 5[I]=55×Text 1,5I,"I"
+List 5[I]=45×Text 1,5I,"J"
+List 5[I]=35×Text 1,5I,"K"
+List 5[I]=25×Text 1,5I,"L"
+List 5[I]=74×Text 1,5I,"M"
+List 5[I]=64×Text 1,5I,"N"
+List 5[I]=54×Text 1,5I,"O"
+List 5[I]=73×Text 1,5I,"P"
+List 5[I]=63×Text 1,5I,"Q"
+List 5[I]=53×Text 1,5I,"R"
+List 5[I]=43×Text 1,5I,"S"
+List 5[I]=33×Text 1,5I,"T"
+List 5[I]=72×Text 1,5I,"U"
+List 5[I]=62×Text 1,5I,"V"
+List 5[I]=52×Text 1,5I,"W"
+List 5[I]=42×Text 1,5I,"X"
+List 5[I]=32×Text 1,5I,"Y"
+List 5[I]=71×Text 1,5I,"Z"
+Return
+
+Lbl 2
+Cls
+
+For 1ãI To 22
+List 5[I]È0×Text 3,5I,"_"
+Next
+Horizontal 53
+F-Line 117,53,112,48
+F-Line 80,53,85,48
+
+Lbl 3
+
+P=1×F-Line 112,48,85,48
+P=2×F-Line 100,48,100,15
+P=3×F-Line 100,15,70,15
+P=4×F-Line 100,25,90,15
+P=5×F-Line 70,15,70,20
+P=6×Circle 70,23,3
+P=7×F-Line 70,26,70,36
+P=8×F-Line 70,36,73,43
+P=9×F-Line 70,36,67,43
+P=10×F-Line 70,30,74,30
+P=11×F-Line 70,30,66,30
+
+If O=1
+Then 
+For 1ãI To 22
+If List 5[I]=K
+Then 
+76=K×Text 1,5I,"A"
+66=K×Text 1,5I,"B"
+56=K×Text 1,5I,"C"
+46=K×Text 1,5I,"D"
+36=K×Text 1,5I,"E"
+26=K×Text 1,5I,"F"
+75=K×Text 1,5I,"G"
+65=K×Text 1,5I,"H"
+55=K×Text 1,5I,"I"
+45=K×Text 1,5I,"J"
+35=K×Text 1,5I,"K"
+25=K×Text 1,5I,"L"
+74=K×Text 1,5I,"M"
+64=K×Text 1,5I,"N"
+54=K×Text 1,5I,"O"
+73=K×Text 1,5I,"P"
+63=K×Text 1,5I,"Q"
+53=K×Text 1,5I,"R"
+43=K×Text 1,5I,"S"
+33=K×Text 1,5I,"T"
+72=K×Text 1,5I,"U"
+62=K×Text 1,5I,"V"
+52=K×Text 1,5I,"W"
+42=K×Text 1,5I,"X"
+32=K×Text 1,5I,"Y"
+71=K×Text 1,5I,"Z"
+IfEnd
+Next
+IfEnd
+
+Lbl 4
