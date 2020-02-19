@@ -1,0 +1,60 @@
+Filename:PUISSAN4
+ViewWindow 127,1,0,63,1,0Ù
+For 1ãI To 10Ù
+F-Line 23+7I,7,23+7I,61Ù
+F-Line 30,6I+1,93,6I+1Ù
+IÈ10×Text 1,30+7I,IÙ
+NextÙ
+Ù
+Ù
+{9,9ãDim Mat EÙ
+Fill(0,Mat E)Ù
+Ù
+9ãDim List 4Ù
+9ãDim List 5Ù
+9ãDim List 6Ù
+9ãDim List 7Ù
+Ù
+1ãL~OÙ
+0ãWÙ
+0ãVÙ
+1ãPÙ
+1ãAÙ
+Ù
+Lbl 1Ù
+DoÙ
+GetkeyãK
+LpWhile KÈ72 And KÈ73 And KÈ74 And KÈ62 And KÈ63 And KÈ64 And KÈ52 And KÈ53 And KÈ54
+K=72×1ãA
+K=62×2ãA
+K=52×3ãA
+K=73×4ãA
+K=63×5ãA
+K=53×6ãA
+K=74×7ãA
+K=64×8ãA
+K=54×9ãA
+
+0ãT
+Do
+T+1ãT
+T=10×Goto 1
+LpWhile Mat E[T,A]È0
+PãMat E[T,A]
+P+1ãP
+P=3×1ãP
+
+For 1ãI To 9
+T=I×10-IãB
+Next
+
+Prog "PSS4CALC"
+Prog "PSS4DISP"
+
+WÈ0×Goto 2
+Goto 1
+Lbl 2
+Cls
+Locate 5,4,"PLAYER   WINS"
+P=2×Locate 12,4,"#E6A6"
+P=1×Locate 12,4,"#E6A5"
