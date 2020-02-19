@@ -1,0 +1,71 @@
+Filename:PSS4CALC
+Text 1,1,"~"
+9ãDim List 4
+9ãDim List 5
+9ãDim List 6
+9ãDim List 7
+
+1ãR
+1ãL
+1ãM
+1ãN
+1ãO
+0ãW
+0ãV
+
+For 1ãI To 9
+For 1ãJ To 9
+If Mat E[I,J]=Mat E[T,A]
+Then 
+J=A×IãList 4[L]
+J=A×L+1ãL
+
+I=T×JãList 5[M]
+I=T×M+1ãM
+
+J=I-A+T×IãList 6[R]
+J=I-A+T×R+1ãR
+
+J=(-1)ÀI+A+T×IãList 7[O]
+J=(-1)ÀI+A+T×O+1ãO
+
+IfEnd
+Next
+Next
+
+0ãV
+W=0×For 1ãI To 8
+List 4[I]+1=List 4[I+1]×V+1ãV
+V=3×1ãW
+List 4[I]+1ÈList 4[I+1]×0ãV
+Next
+
+0ãV
+If W=0
+Then 
+For 1ãI To 8
+List 5[I]+1=List 5[I+1]×V+1ãV
+V=3×2ãW
+List 5[I]+1ÈList 5[I+1]×0ãV
+Next
+IfEnd
+
+0ãV
+If W=0
+Then 
+For 1ãI To 8
+List 6[I]+1=List 6[I+1]×V+1ãV
+V=3×3ãW
+List 6[I]+1ÈList 6[I+1]×0ãV
+Next
+IfEnd
+
+0ãV
+If W=0
+Then 
+For 1ãI To 8
+List 7[I]+1=List 7[I+1]×V+1ãV
+V=3×4ãW
+List 7[I]+1ÈList 7[I+1]×0ãV
+Next
+IfEnd
