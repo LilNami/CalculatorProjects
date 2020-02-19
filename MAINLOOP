@@ -9,25 +9,25 @@ ClrText
 Prog "DRAWCARD"
 'Jouer une carte
 Prog "PLAYNEW"
-P+1ãP
+P+1Ã£P
 'Application des  effets
-L=1×Prog "EFFECT1"
-L=2×Prog "EFFECT2"
-L=3×Prog "EFFECT3"
-L=4×1ãList 8[T]
-L=5×Prog "EFFECT5"
-L=6×Prog "EFFECT6"
-L=8×TãM
+L=1Ã—Prog "EFFECT1"
+L=2Ã—Prog "EFFECT2"
+L=3Ã—Prog "EFFECT3"
+L=4Ã—1Ã£List 8[T]
+L=5Ã—Prog "EFFECT5"
+L=6Ã—Prog "EFFECT6"
+L=8Ã—TÃ£M
 ClrText
 
-'Protection si un joueur est  éliminé alors  qu'il  est protégé
-MÈ0×List 8[M]=0×0ãList 7[M]
-MÈ0×List 8[M]=0×0ãList 8[T]
-MÈ0×List 8[M]È0×0ãList 8[M]
-0ãM
+'Protection si un joueur est  Ã©liminÃ© alors  qu'il  est protÃ©gÃ©
+MÃˆ0Ã—List 8[M]=0Ã—0Ã£List 7[M]
+MÃˆ0Ã—List 8[M]=0Ã—0Ã£List 8[T]
+MÃˆ0Ã—List 8[M]Ãˆ0Ã—0Ã£List 8[M]
+0Ã£M
 
 'Si  il ne reste  qu'un  joueur  en vie, alors
-Sum List 7=1×Goto 2
+Sum List 7=1Ã—Goto 2
 
 'Passage au tour suivant
 Prog "SETTURN"
@@ -38,8 +38,8 @@ Lbl 2
 ClrText
 
 'Recherche du vainqueur
-For 1ãK To Dim List 7
-List 7[K]=1×Locate 9,3,K
+For 1Ã£K To Dim List 7
+List 7[K]=1Ã—Locate 9,3,K
 Next
 
 'Affichage du vainqueur
@@ -48,12 +48,12 @@ Locate 2,3,"PLAYER"
 
 
 'Attendre
-For 1ãI To 500
+For 1Ã£I To 500
 Next
 
 'Player Input
 Do
-GetkeyãK
+GetkeyÃ£K
 LpWhile Not K
 
 'Retour au menu
