@@ -1,0 +1,185 @@
+Filename:..MAZLVL
+'On  initialise les variables et les matrices
+1ãR
+0ãG
+{33,12ãDim Mat N
+{33,12ãDim Mat R
+Fill(1,Mat N)
+'On place des mur autour de la carte
+For 1ãI To 33
+29ãMat N[I,1]
+29ãMat N[I,12]
+Next
+For 2ãI To 11
+29ãMat N[1,I]
+29ãMat N[33,I]
+Next
+
+'On appelle les  coordonnées de départ
+Prog "LCG"
+'On met en place les variables
+PãX
+QãY
+PãN
+QãO
+PãU
+QãV
+'On place le joueur au coordonnées de départ
+1ãMat N[P,Q]
+'On cherche la direction (verticale ou horizontale) du premier déplacement
+MOD(P+Q,2)ãT
+
+'On cherche le nombre de déplacements entre le point de départ et le point d'arrivé
+U+VãW
+W>20×20ãW
+'On commence la boucle de génération de déplacement
+For 1ãä To W
+'On change la direction
+T+1ãT
+T=3×1ãT
+
+'Affiche de la barre de chargement (pourcentage de progression de la boucle For)
+Locate Int ((ä»W)À16),7,"=="
+Locate 18,7,Int ((ä»W)À100)
+Locate 1+Int ((ä»W)À14),7,"=="
+Locate 1,7,"}"
+Locate 17,7,"{"
+Locate 21,7,"%"
+
+'Si la direction est horizontale
+If T=1
+Then 
+'Marqueur horizontal
+Lbl 1
+'On cherche des coordonnés différentes de la position actuelle
+Do
+Prog "LCG"
+LpWhile P=U
+P
+'On place un mur pour s'arreter
+
+'Si la le sens est vers la droite
+If P>U
+Then 
+'Si il y a un mur entre les nouvelles coordonnés et la position actuelle
+'Ou si il passe par un chemin deja  parcouru
+'On cherche de nouvelles coordonnées
+For UãI To P
+Mat N[I,V]=29×Goto 1
+Mat N[I,V]=19×Goto 1
+Mat N[I,V]=17×Goto 1
+Mat N[I,V]=13×Goto 1
+MOD(Mat N[I,V],2)=0×Goto 1
+Next
+'On marque le chemin parouru
+For UãI To P
+Mat N[I,V]À2ãMat N[I,V]
+Next
+'On place le mur correspondant (mur normal ou mur directionnel)
+Mat N[P+1,V]=1×29ãMat N[P+1,V]
+MOD(Mat N[P+1,V],35)=0×43ãMat N[P+1,V]
+MOD(Mat N[P+1,V],7)=0×19ãMat N[P+1,V]
+MOD(Mat N[P+1,V],5)=0×17ãMat N[P+1,V]
+MOD(Mat N[P+1,V],3)=0×13ãMat N[P+1,V]
+
+IfEnd
+
+'Meme chose pour un horizontal coté gauche
+If P<U
+Then 
+For PãI To U
+Mat N[I,V]=29×Goto 1
+Mat N[I,V]=19×Goto 1
+Mat N[I,V]=17×Goto 1
+Mat N[I,V]=11×Goto 1
+MOD(Mat N[I,V],3)=0×Goto 1
+Next
+For PãI To U
+Mat N[I,V]À3ãMat N[I,V]
+Next
+Mat N[P-1,V]=1×29ãMat N[P-1,V]
+MOD(Mat N[P-1,V],35)=0×43ãMat N[P-1,V]
+MOD(Mat N[P-1,V],7)=0×19ãMat N[P-1,V]
+MOD(Mat N[P-1,V],5)=0×17ãMat N[P-1,V]
+MOD(Mat N[P-1,V],2)=0×11ãMat N[P-1,V]
+
+IfEnd
+
+'On affecte la nouvelle position a notre position actuelle
+PãU
+V
+IfEnd
+
+'Meme chose pour la direction verticale
+If T=2
+Then 
+Lbl 2
+Do
+Prog "LCG"
+LpWhile Q=V
+Q
+
+'Meme chose direction verticale, vers le bas
+If Q>V
+Then 
+For VãI To Q
+Mat N[U,I]=29×Goto 2
+Mat N[U,I]=17×Goto 2
+Mat N[U,I]=11×Goto 2
+Mat N[U,I]=13×Goto 2
+MOD(Mat N[U,I],7)=0×Goto 2
+Next
+For VãI To Q
+Mat N[I,V]À7ãMat N[U,I]
+Next
+Mat N[U,Q+1]=1×29ãMat N[U,Q+1]
+MOD(Mat N[U,Q+1],6)=0×41ãMat N[U,Q+1]
+MOD(Mat N[U,Q+1],2)=0×11ãMat N[U,Q+1]
+MOD(Mat N[U,Q+1],3)=0×13ãMat N[U,Q+1]
+MOD(Mat N[U,Q+1],5)=0×17ãMat N[U,Q+1]
+
+IfEnd
+
+'Meme chose direction verticale, vers le haut
+If Q<V
+Then 
+For QãI To V
+Mat N[U,I]=29×Goto 2
+Mat N[U,I]=19×Goto 2
+Mat N[U,I]=11×Goto 2
+Mat N[U,I]=13×Goto 2
+MOD(Mat N[U,I],5)=0×Goto 2
+Next
+For QãI To V
+Mat N[I,V]À5ãMat N[U,I]
+Next
+Mat N[U,Q-1]=1×29ãMat N[U,Q-1]
+MOD(Mat N[U,Q-1],6)=0×41ãMat N[U,Q-1]
+MOD(Mat N[U,Q-1],2)=0×11ãMat N[U,Q-1]
+MOD(Mat N[U,Q-1],3)=0×13ãMat N[U,Q-1]
+MOD(Mat N[U,Q-1],7)=0×19ãMat N[U,Q-1]
+
+IfEnd
+
+'On affecte la nouvelle position a notre position actuelle
+U
+QãV
+IfEnd
+Next
+
+'On place le drapeau  de fin aux coordonnées finales
+31ãMat N[U,V]
+
+'On place les pièges à des positions vides.
+For 1ãä To 10
+Prog "LCG"
+Do
+Prog "LCG"
+LpWhile Mat N[P,Q]È1
+23ãMat N[P,Q]
+Next
+
+'On copie le niveau vers la matrice de reset
+Mat NãMat R
+'On affiche le niveau
+Prog "..DPHD"
