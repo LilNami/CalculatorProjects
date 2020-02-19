@@ -1,0 +1,60 @@
+Filename:...MAZE
+'Attendre
+For 1ãI To 250
+Next
+
+'Affichage
+Locate 9,1,"Seed?"
+Locate 7,3,"[1     ]"
+Locate 15,5,"RNG (º)"
+Locate 1,5,"History ."
+
+'Mettre le seed à 1 (par défaut)
+1ãC
+
+'Boucle pour modifier le seed 
+Lbl 1
+Do
+GetkeyãK
+LpWhile KÈ71 And KÈ72 And KÈ73 And KÈ74 And KÈ62 And KÈ63 And KÈ64 And KÈ52 And KÈ53 And KÈ54 And KÈ41 And KÈ44 And KÈ31 And KÈ61Ù
+
+'Afficher l'Historique
+K=61×List 12Ø
+'Valider le seed et sortir de la boucle
+K=31×Goto 2
+K=71×C<99999×CÀ10ãC
+K=72×C<99999×CÀ10+1ãC
+K=73×C<99999×CÀ10+4ãC
+K=74×C<99999×CÀ10+7ãC
+K=62×C<99999×CÀ10+2ãC
+K=63×C<99999×CÀ10+5ãC
+K=64×C<99999×CÀ10+8ãC
+K=52×C<99999×CÀ10+3ãC
+K=53×C<99999×CÀ10+6ãC
+K=54×C<99999×CÀ10+9ãC
+
+'Effacer
+If K=44
+Then Int (CÁ10)ãC
+Locate 7,3,"[      ]"
+IfEnd
+
+'Seed Aléatoire
+If K=41
+Then RanBin#(2,999999)ãC
+Locate 7,3,"[      ]"
+IfEnd
+
+'Affichage du seed
+Locate 8,3,C
+
+'Attendre
+For 1ãI To 100
+Next
+Goto 1
+
+'Marqueur pour sortir de la boucle
+Lbl 2
+
+'Lancer le jeu
+Prog "..MAZE"
