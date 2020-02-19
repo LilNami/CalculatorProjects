@@ -10,11 +10,11 @@ Prog "MAINLOOP"
 Goto 4
 
 Lbl 2
-'On affiche  les règles
+'On affiche  les rÃ¨gles
 Prog "REGLES"
 Goto 4
 
 Lbl 3
-'On lance l'éditeur de deck
+'On lance l'Ã©diteur de deck
 Prog "EDITOR"
 Goto 4
