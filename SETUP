@@ -1,0 +1,52 @@
+Filename:SETUP
+Dim List 9ãA
+1ãX
+
+'FILL DECK/REFILL 
+List 9ãList 4
+
+Lbl 1
+Locate 15,7,"MAX"
+Locate 19,7,Dim List 4-2
+"PLAYERS "?ãX
+If XÉ1 Or XÊDim List 4-1
+Then ClrText
+Goto 1
+IfEnd
+
+'DEF PLAYED LIST
+Dim List 4-XãDim List 3
+
+'SET HANDS AND TURNS
+XãDim List 6
+XãDim List 7
+XãDim List 8
+Fill(1,List 7)
+
+'DRAW FOR PLAYERS
+For 1ãK To X
+
+'DRAW
+Do
+RanBin#(1,Dim List 4)ãA
+List 4[A]ãD
+LpWhile D=0
+0ãList 4[A]
+DãList 6[K]
+Next
+
+1ãT
+1ãP
+0ãL
+
+'STRINGS
+"Deviner"ãStr 1
+"Voir"ãStr 2
+"Duel"ãStr 3
+"Proteger"ãStr 4
+"Defausse"ãStr 5
+"Echange"ãStr 6
+"Obliger"ãStr 7
+"MORT"ãStr 8
+
+0ãN
