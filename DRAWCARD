@@ -1,11 +1,11 @@
 Filename:DRAWCARD
 Prog "IFZZ"
 
-'Prendre une carte àléatoire dans  le deck 
+'Prendre une carte Å•lÃ©atoire dans  le deck 
 '(on repete cette action jusqu'a trouver une  carte utilisable)
 Do
-RanBin#(1,Dim List 4)ãA
-List 4[A]ãD
+RanBin#(1,Dim List 4)ÄƒA
+List 4[A]ÄƒD
 LpWhile D=0
-0ãList 4[A]
+0ÄƒList 4[A]
 Return
