@@ -1,0 +1,81 @@
+Filename:PENDU
+22ãDim List 5
+11ãDim List 6
+Fill(0,List 6)
+Fill(0,List 5)
+1ãJ
+0ãM
+1ãA
+0ãG
+0ãP
+0ãO
+0ãW
+0ãL
+ViewWindow 127,1,0,63,1,0
+For 1ãI To Dim List 5
+'Text 4,5I,"_"
+Next
+Text 63,1,"="
+
+Lbl 1
+For 1ãI To 50
+Next
+
+Do
+GetkeyãK
+LpWhile KÈ32 And KÈ33 And KÈ25 And KÈ26 And KÈ32 And KÈ33 And KÈ35 And KÈ36 And KÈ42 And KÈ43 And KÈ45 And KÈ46 And KÈ52 And KÈ53 And KÈ54 And KÈ55 And KÈ56 And KÈ62 And KÈ63 And KÈ64 And KÈ65 And KÈ66 And KÈ72 And KÈ73 And KÈ74 And KÈ75 And KÈ76 And KÈ44 And KÈ41 And KÈ71
+K=41×Goto 3
+
+If K=44 And AÈ1
+Then A-1ãA
+0ãList 5[A]
+Text 1,5A," "
+Else 
+KãList 5[A]
+Prog "PENDUDSP"
+KÈ44×A<22×A+1ãA
+IfEnd
+
+
+Goto 1
+Lbl 3
+
+G=0×1ãG
+
+If M=0
+Then 
+For 1ãI To 22
+List 5[I]È0×M+1ãM
+Next
+IfEnd
+Prog "PENDUDSP"
+
+
+2ãG
+
+Do
+GetkeyãK
+LpWhile KÈ32 And KÈ33 And KÈ25 And KÈ26 And KÈ32 And KÈ33 And KÈ35 And KÈ36 And KÈ42 And KÈ43 And KÈ45 And KÈ46 And KÈ52 And KÈ53 And KÈ54 And KÈ55 And KÈ56 And KÈ62 And KÈ63 And KÈ64 And KÈ65 And KÈ66 And KÈ72 And KÈ73 And KÈ74 And KÈ75 And KÈ76 And KÈ71
+
+0ãO
+For 1ãI To 22
+List 5[I]ãB
+If B=K
+Then 1ãO
+KãA
+L+1ãL
+IfEnd
+Next
+If OÈ1
+Then P+1ãP
+KãList 6[P]
+Prog "PENDUTT"
+IfEnd
+Prog "PENDUDSP"
+L=M×Goto 4
+P=11×Goto 4
+Goto 3
+Lbl 4
+M=L×Text 55,90,"YOU WON"
+MÈL×Text 55,90,"YOU LOST"
+
