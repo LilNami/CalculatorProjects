@@ -1,0 +1,83 @@
+Filename:EDITOR
+'Initialisation des variables
+1ãI
+8ãX
+0ãV
+0ãD
+
+'Affichage de  l'interface.
+Locate 1,1,"DECK SIZE"
+Locate 17,7,"[F6]"
+Locate 1,7,"PRESET[F1]"
+Lbl 1
+Locate 1,3,"[ººººººººººººººººº]"
+Locate X,3,"#E6DA"
+Locate 21,3," "
+Locate 20,3,2X
+
+
+'Player Input
+Do
+For 1ãI To 27
+Next
+GetkeyãA
+LpWhile AÈ27 And AÈ38 And AÈ29 And AÈ79
+
+'Déplacer le curseur
+A=27×XÈ18×X+1ãX
+A=27×Goto 1
+A=38×XÈ2×X-1ãX
+A=38×Goto 1
+
+'Accès au niveaux PRESET
+A=79×ClrText
+A=79×Prog "PRESET"
+'Retourne  au menu
+A=79×Return
+
+ClrText
+'Défini la taille du  deck
+XÀ2ãDim List 9
+
+'Affichage interface  d'addition de carte
+For 1ãI To Dim List 9
+Locate 6,1,"INSERT CARD"
+Locate 9,3,"7 8 #E6CB"
+Locate 9,5,"4 5 6"
+Locate 9,7,"1 2 3"
+
+'Player Input
+Do
+GetkeyãK
+LpWhile KÈ72 And KÈ73 And KÈ74 And KÈ62 And KÈ63 And KÈ64 And KÈ52 And KÈ53
+I-DãV
+
+'Ajout de la carte au deck
+K=72×1ãList 9[V]
+K=73×4ãList 9[V]
+K=74×7ãList 9[V]
+K=62×2ãList 9[V]
+K=63×5ãList 9[V]
+K=64×8ãList 9[V]
+K=52×3ãList 9[V]
+K=53×6ãList 9[V]
+
+'Affichage du progrès
+Locate 17,7,I
+Locate 19,7,"/"
+Locate 20,7,2ÀX
+
+'Attendre
+0ãA
+While A<70
+A+1ãA
+WhileEnd
+
+Next
+
+ClrText
+
+'Sortie de l'éditeur une fois le  deck rempli
+Locate 8,4,"DONE"
+ClrText
+Return
