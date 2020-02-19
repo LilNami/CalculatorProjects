@@ -1,0 +1,61 @@
+Filename:MAINLOOP
+'Lance l'initialisation du jeu
+Prog "SETUP"
+
+While 1=1
+
+ClrText
+'Piocher  une  carte
+Prog "DRAWCARD"
+'Jouer une carte
+Prog "PLAYNEW"
+P+1ãP
+'Application des  effets
+L=1×Prog "EFFECT1"
+L=2×Prog "EFFECT2"
+L=3×Prog "EFFECT3"
+L=4×1ãList 8[T]
+L=5×Prog "EFFECT5"
+L=6×Prog "EFFECT6"
+L=8×TãM
+ClrText
+
+'Protection si un joueur est  éliminé alors  qu'il  est protégé
+MÈ0×List 8[M]=0×0ãList 7[M]
+MÈ0×List 8[M]=0×0ãList 8[T]
+MÈ0×List 8[M]È0×0ãList 8[M]
+0ãM
+
+'Si  il ne reste  qu'un  joueur  en vie, alors
+Sum List 7=1×Goto 2
+
+'Passage au tour suivant
+Prog "SETTURN"
+WhileEnd
+
+
+Lbl 2
+ClrText
+
+'Recherche du vainqueur
+For 1ãK To Dim List 7
+List 7[K]=1×Locate 9,3,K
+Next
+
+'Affichage du vainqueur
+Locate 11,3,"WINS GAME"
+Locate 2,3,"PLAYER"
+
+
+'Attendre
+For 1ãI To 500
+Next
+
+'Player Input
+Do
+GetkeyãK
+LpWhile Not K
+
+'Retour au menu
+ClrText
+Return

@@ -1,0 +1,129 @@
+Filename:EFFECT3
+
+'Affichage  des cibles possibles
+List 7„List 1
+
+(Sum List 1)-1„Dim List 5
+1„Y
+1„X
+2„A
+
+
+For 1„K To Dim List 1
+If K»T
+Then List 1[K]»0◊Locate A,2,K
+List 8[K]»0◊Locate A,4,"#E6A3"
+List 1[K]»0◊A+2„A
+List 1[K]»0◊K„List 5[X]
+List 1[K]»0◊X+1„X
+IfEnd
+Next
+
+Locate 1,1,"AVAILABLE"
+
+2„X
+
+'Selection de la cible
+Lbl 1
+
+Locate 1,3,"                     "
+Locate X,3,"#E69C"
+
+Do
+Getkey„A
+LpWhile A»27 And A»38 And A»31
+
+A=38◊X»1◊Y-1„Y
+A=38◊X»1◊X-2„X
+
+A=38◊Goto 1
+
+A=27◊X»2¿(Sum List 7)-2◊Y+1„Y
+A=27◊X»2¿(Sum List 7)-2◊X+2„X
+A=27◊Goto 1
+
+A=31◊List 5[Y]„Q
+A=31◊List 5[Y]„A
+
+ClrText
+'Initialisation du mode Graphique
+ViewWindow 1,100,0,1,60
+
+'Affichage des cartes
+'T
+F-Line 10,5,40,5
+F-Line 10,5,10,50
+F-Line 40,5,40,50
+F-Line 10,50,40,50
+F-Line 10,42,40,42
+F-Line 10,25,40,25
+
+'A
+F-Line 60,5,90,5
+F-Line 60,5,60,50
+F-Line 90,5,90,50
+F-Line 60,50,90,50
+F-Line 60,42,90,42
+F-Line 60,25,90,25
+
+Text 4,18,"PLAYER"
+Text 4,45,T
+
+Text 4,80,"PLAYER"
+Text 4,107,A
+
+Text 14,14,List 6[T]
+Text 14,78,List 6[A]
+
+Text 30,56," "
+Text 36,60,"VS"
+Text 42,62," "
+
+
+List 6[T]=1◊Text 40,14,Str 1
+List 6[T]=2◊Text 40,14,Str 2
+List 6[T]=3◊Text 40,14,Str 3
+List 6[T]=4◊Text 40,14,Str 4
+List 6[T]=5◊Text 40,14,Str 5
+List 6[T]=6◊Text 40,14,Str 6
+List 6[T]=7◊Text 40,14,Str 7
+List 6[T]=8◊Text 40,14,Str 8
+
+List 6[A]=1◊Text 40,78,Str 1
+List 6[A]=2◊Text 40,78,Str 2
+List 6[A]=3◊Text 40,78,Str 3
+List 6[A]=4◊Text 40,78,Str 4
+List 6[A]=5◊Text 40,78,Str 5
+List 6[A]=6◊Text 40,78,Str 6
+List 6[A]=7◊Text 40,78,Str 7
+List 6[A]=8◊Text 40,78,Str 8
+
+'Attendre Player input
+For 1„I To 500
+Next
+Do
+Getkey„K
+LpWhile Not K
+
+'Comparaison des cartes, et marquage du joueur ÈliminÈ
+If List 6[T]>List 6[A]
+Then A„M
+T„V
+Locate 1,1,"PLAYER   WINS DUEL"
+Locate 8,1,T
+Else If List 6[T]<List 6[A]
+Then T„M
+A„V
+Locate 1,1,"PLAYER   WINS DUEL"
+Locate 8,1,A
+
+Else "NOBODY WINS"
+0„V
+IfEnd
+
+'Attendre Player Input
+For 1„I To 500
+Next
+Do
+Getkey„K
+LpWhile Not K

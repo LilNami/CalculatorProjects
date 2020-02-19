@@ -1,0 +1,236 @@
+Filename:REGLES
+AxesOff
+Cls
+
+ViewWindow 1,127,0,1,61
+
+Text 1,1,"PREPARATION:"
+Text 7,1,"∫MELANGER LE DECK"
+Text 13,1,"∫CHAQUE JOUEUR PIOCHE 1 CARTE"
+Text 25,1,"DEROULEMENT DU TOUR:"
+
+Text 31,1,"∫LE JOUEUR PIOCHE UNE CARTE"
+Text 37,1," (IL A DONC 2 CARTES)"
+Text 43,1,"∫IL JOUE LA CARTE"
+Text 49,1,"∫LES EFFECTS S'APPLIQUENT"
+
+Text 58,120,"#E69B"
+
+Do
+Getkey„K
+LpWhile K»31 And K»47
+K=47◊Return
+
+Cls
+
+ViewWindow 1,100,0,1,60
+
+Text 14,14,"1"
+F-Line 10,5,40,5
+F-Line 10,5,10,50
+F-Line 40,5,40,50
+F-Line 10,50,40,50
+F-Line 10,42,40,42
+F-Line 10,25,40,25
+Text 40,14,Str 1
+
+Text 14,60,"Cible :"
+Text 20,60," ∫1 adversaire"
+Text 32,60,"Si vous devinez"
+Text 38,60,"la  carte de"
+Text 44,60,"votre adversaire"
+Text 50,60,"il est elimine."
+
+Text 58,120,"#E69B"
+
+Do
+Getkey„K
+LpWhile K»31 And K»47
+K=47◊Return
+
+Cls
+Text 14,14,"2"
+F-Line 10,5,40,5
+F-Line 10,5,10,50
+F-Line 40,5,40,50
+F-Line 10,50,40,50
+F-Line 10,42,40,42
+F-Line 10,25,40,25
+Text 40,14,Str 2
+Text 14,60,"Cible :"
+Text 20,60," ∫1 adversaire"
+Text 32,60,"Le joueur cible"
+Text 38,60,"vous revele sa"
+Text 44,60,"carte."
+Text 50,60,""
+Text 58,120,"#E69B"
+Do
+Getkey„K
+LpWhile Not K
+
+Cls
+Text 14,14,"3"
+F-Line 10,5,40,5
+F-Line 10,5,10,50
+F-Line 40,5,40,50
+F-Line 10,50,40,50
+F-Line 10,42,40,42
+F-Line 10,25,40,25
+Text 40,14,Str 3
+Text 14,60,"Cible :"
+Text 20,60," ∫1 adversaire"
+Text 32,60,"Revelez-vous vos"
+Text 38,60,"cartes."
+Text 38,90,"Celui"
+Text 38,110,"dont"
+Text 50,60,"plus"
+Text 50,78,"faible"
+Text 50,103,"valeur"
+Text 44,60,"la carte a la"
+Text 56,60,"est elimine.
+
+F-Line 13,45,22,55
+Text 3,30,"valeur"
+
+Text 58,120,"#E69B"
+Do
+Getkey„K
+LpWhile Not K
+
+Cls
+Text 14,14,"4"
+F-Line 10,5,40,5
+F-Line 10,5,10,50
+F-Line 40,5,40,50
+F-Line 10,50,40,50
+F-Line 10,42,40,42
+F-Line 10,25,40,25
+Text 40,14,Str 4
+Text 14,60,"Cible :"
+Text 20,60," ∫Self"
+Text 32,60,"Previent votre"
+Text 38,60,"prochaine"
+Text 44,60,"elimination."
+Text 50,60,"(Jusqu'a la FIN de votre"
+Text 56,60,"prochain tour)"
+Text 58,120,"#E69B"
+Do
+Getkey„K
+LpWhile Not K
+Cls
+Text 14,14,"5"
+F-Line 10,5,40,5
+F-Line 10,5,10,50
+F-Line 40,5,40,50
+F-Line 10,50,40,50
+F-Line 10,42,40,42
+F-Line 10,25,40,25
+Text 40,14,Str 5
+Text 14,60,"Cible :"
+Text 20,60," ∫1 joueur"
+Text 32,60,"Le joueur cible"
+Text 38,60,"defausse sa"
+Text 44,60,"carte et en"
+Text 50,60,"pioche une autre."
+Text 58,120,"#E69B"
+Do
+Getkey„K
+LpWhile Not K
+
+Cls
+Text 14,14,"6"
+F-Line 10,5,40,5
+F-Line 10,5,10,50
+F-Line 40,5,40,50
+F-Line 10,50,40,50
+F-Line 10,42,40,42
+F-Line 10,25,40,25
+Text 40,14,Str 6
+Text 14,60,"Cible :"
+Text 20,60," ∫1 joueur"
+Text 32,60,"Le joueur cible"
+Text 38,60,"echange sa carte"
+Text 44,60,"avec la votre."
+Text 50,60,""
+Text 58,120,"#E69B"
+Do
+Getkey„K
+LpWhile Not K
+
+
+Cls
+Text 14,14,"7"
+F-Line 10,5,40,5
+F-Line 10,5,10,50
+F-Line 40,5,40,50
+F-Line 10,50,40,50
+F-Line 10,42,40,42
+F-Line 10,25,40,25
+Text 40,14,Str 7
+Text 14,60,"Cible :"
+Text 20,60,"sans"
+Text 32,60,"Vous etes OBLIGE"
+Text 38,60,"de jouer cette"
+Text 44,60,"carte."
+Text 50,60,"Aucun effet."
+Text 58,120,"#E69B"
+Do
+Getkey„K
+LpWhile Not K
+Cls
+Text 14,14,"8"
+F-Line 10,5,40,5
+F-Line 10,5,10,50
+F-Line 40,5,40,50
+F-Line 10,50,40,50
+F-Line 10,42,40,42
+F-Line 10,25,40,25
+Text 40,14,Str 8
+Text 14,60,"Cible :"
+Text 20,60,"sans"
+Text 32,60,"Vous etes elimine"
+Text 38,60,"si vous JOUEZ ou"
+Text 44,60,"DEFAUSSEZ cette"
+Text 50,60,"carte."
+Text 58,120,"#E69B"
+Do
+Getkey„K
+LpWhile Not K
+
+Cls
+Text 1,1,"MAIN"
+Text 7,1," A tout moment, les joueurs "
+Text 13,1,"ont 1 carte en main."
+Text 19,1,"Lors de votre tour, 2 cartes"
+Text 25,1,"vous sont presentees."
+Text 31,1,"La carte piochee est a droite."
+Text 37,1,"Selectionnez les cartes avec"
+Text 43,1,"les fleches."
+Text 49,1,"Jouez la carte choisie avec EXE."
+Text 55,1,""
+Text 61,1,""
+
+Text 58,120,"#E69B"
+Do
+Getkey„K
+LpWhile Not K
+
+Cls
+Text 1,1,"CIBLAGE"
+Text 7,1," Lorsque vous devez cibler un"
+Text 13,1,"joueur, toutes les cibles valides"
+Text 19,1,"vous seront presentees."
+Text 25,1,"Les joueurs ayant un 4 actif"
+Text 31,1,"ont un — sous leur numero."
+Text 37,1,"Selectionnez la cible avec"
+Text 43,1,"les fleches."
+Text 49,1,"Validez avec EXE."
+Text 55,1,""
+Text 61,1,""
+
+Text 58,120,"#E69B"
+Do
+Getkey„K
+LpWhile Not K
+
+Return
