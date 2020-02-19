@@ -1,0 +1,84 @@
+Filename:SETTURN
+TãN
+
+ClrText
+
+List 8[T]È0×List 8[T]+1ãList 8[T]
+List 8[T]>1+Sum List 7×0ãList 8[T]
+
+Lbl 1
+T>Sum List 7×0ãT
+Do
+T+1ãT
+T>Sum List 7×Goto 1
+LpWhile List 7[T]=0
+
+ViewWindow 1,100,0,1,60
+
+'D
+F-Line 10,5,40,5
+F-Line 10,5,10,50
+F-Line 40,5,40,50
+F-Line 10,50,40,50
+F-Line 10,42,40,42
+F-Line 10,25,40,25
+
+'H
+F-Line 60,5,90,5
+F-Line 60,5,60,50
+F-Line 90,5,90,50
+F-Line 60,50,90,50
+F-Line 60,42,90,42
+F-Line 60,25,90,25
+
+Text 1,49-17,"PLAYER'  S TURN"
+Text 1,76-17,T
+
+Text 14,14,"?"
+Text 14,78,"?"
+
+If LÈ0
+Then Text 10,62,N
+Text 16,61,"#E693"
+Text 22,62,L
+
+L=1×Text 22,62,""
+L=1×Text 28,58,"SUR"
+L=1×Text 34,62,Q
+
+L=1×Text 42,62,"?"
+L=1×Text 48,61,"#E693"
+L=1×Text 54,59,"( )"
+L=1×Text 54,62,V
+
+L=2×Text 22,62,""
+L=2×Text 28,58,"SUR"
+L=2×Text 34,62,Q
+
+L=3×Text 22,62,""
+L=3×Text 28,58,"SUR"
+L=3×Text 34,62,Q
+
+L=3×Text 42,56,"WIN"
+L=3×Text 48,61,"#E693"
+L=3×Text 54,59,"( )"
+L=3×Text 54,62,V
+L=3×V=0×Text 54,54,"NONE"
+
+L=5×Text 22,62,""
+L=5×Text 28,58,"SUR"
+L=5×Text 34,62,Q
+L=5×Q=N×Text 34,56,"SELF"
+
+L=6×Text 22,62,""
+L=6×Text 28,58,"SUR"
+L=6×Text 34,62,Q
+
+IfEnd
+
+For 1ãI To 500
+Next
+Do
+GetkeyãK
+LpWhile Not K
+Return
