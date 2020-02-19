@@ -1,0 +1,17 @@
+Filename:LCG
+'On initialise le multiplicateur et le module
+36336ãA
+10^5ãM
+
+'On  calcule le résultat
+MOD((AÀR+C),M)ãR
+
+'On réduit le résultat a un nombre à 2 chiffre
+RãB
+While B>99
+BÁ10ãB
+WhileEnd
+
+'On obtient les coordonnées
+MOD(Int B,31)+2ãP
+MOD(Int B,10)+2ãQ
