@@ -1,0 +1,150 @@
+Filename:..MAZE
+'On place le seed  dans l'Historique
+CãList 12[L]
+L+1ãL
+L>50×1ãL
+
+'On  initialise le mode graphique		
+ViewWindow 127,1,0,63,1,0
+'On efface l'écran
+Cls
+1ãR
+'Lance le  générateur de niveau
+Prog "..MAZLVL"
+
+1ãG
+'Marqueur de la boucle principale
+Lbl 1
+'Si le joueur est sur le drapeau, alors
+Mat N[X,Y]=31×Goto 2
+'Si le joueur est sur un piege, alors
+Mat N[X,Y]=23×Goto 3
+
+'Boucle d'input
+Do
+GetkeyãK
+LpWhile KÈ37 And KÈ28 And KÈ27 And KÈ38 And KÈ32
+
+'Si le joueur veux redémarrer le niveau
+If K=32
+Then 
+'Marqueur redémarrer le niveau
+Lbl 3
+'Effacer l'écran
+ClsÙ
+'La matrice du niveau prend la valeur de la matrice reset
+Mat RãMat N
+'Les coordonnées de départ  sont remises
+NãX
+OãY
+0ãG
+'On affiche  le niveau
+Prog "..DPHD"
+1ãG
+'On  retourne au début de la boucle
+Goto 1
+IfEnd
+
+'Si le joueur  veut  aller vers le bas
+If K=37
+Then 
+'Pour chaque deplacement possible
+For 1ãI To 11
+'On vérifi s'il n'y a pas  de mur
+If Mat N[X,Y+1]È29 And Mat N[X,Y+1]È17 And Mat N[X,Y+1]È11 And Mat N[X,Y+1]È13 And Mat N[X,Y+1]È41
+'On efface la case ou se  trouvait le  joueur
+Then Text 6Y-11,4X-7," "
+'On actualise la case  ou se trouvait le joueur
+Mat N[X,Y]=19×Text 6Y-11,4X-7,"#E69D"
+Mat N[X,Y]=17×Text 6Y-11,4X-7,"#E69C"
+Mat N[X,Y]=13×Text 6Y-11,4X-7,"#E69A"
+Mat N[X,Y]=11×Text 6Y-11,4X-7,"#E69B"
+Mat N[X,Y]=41×Text 6Y-11,4X-7,"="
+Mat N[X,Y]=43×Text 6Y-11,4X-7,"H"
+'Si le joueur touche un piege, alors
+Mat N[X,Y]=23×Goto 3
+'Si le joueur touche le drapeau
+X=U And Y=V×Goto 2
+'On actualise les coordonnées du joueur
+Y+1ãY
+'On affiche le joueur
+Text 6Y-11,4X-7,"#E6A6"
+IfEnd
+Next
+IfEnd
+
+'Meme chose pour le haut
+If K=28 And YÈ1
+Then 
+For 1ãI To 10
+If YÈ1
+Then 
+If Mat N[X,Y-1]È29 And Mat N[X,Y-1]È19 And Mat N[X,Y-1]È11 And Mat N[X,Y-1]È13 And Mat N[X,Y-1]È41
+Then 
+Text 6Y-11,4X-7," "
+Mat N[X,Y]=19×Text 6Y-11,4X-7,"#E69D"
+Mat N[X,Y]=17×Text 6Y-11,4X-7,"#E69C"
+Mat N[X,Y]=13×Text 6Y-11,4X-7,"#E69A"
+Mat N[X,Y]=11×Text 6Y-11,4X-7,"#E69B"
+Mat N[X,Y]=41×Text 6Y-11,4X-7,"="
+Mat N[X,Y]=43×Text 6Y-11,4X-7,"H"
+Mat N[X,Y]=23×Goto 3
+X=U And Y=V×Goto 2
+YÈ1×Mat N[X,Y-1]È29×Y-1ãY
+Text 6Y-11,4X-7,"#E6A6"
+IfEnd
+IfEnd
+Next
+IfEnd
+
+'Même chose  pour  la droite
+If K=27 And XÈ31
+Then 
+For 1ãI To 32
+If Mat N[X+1,Y]È29 And Mat N[X+1,Y]È19 And Mat N[X+1,Y]È17 And Mat N[X+1,Y]È13 And Mat N[X+1,Y]È43
+Then 
+Text 6Y-11,4X-7," "
+Mat N[X,Y]=19×Text 6Y-11,4X-7,"#E69D"
+Mat N[X,Y]=17×Text 6Y-11,4X-7,"#E69C"
+Mat N[X,Y]=13×Text 6Y-11,4X-7,"#E69A"
+Mat N[X,Y]=11×Text 6Y-11,4X-7,"#E69B"
+Mat N[X,Y]=41×Text 6Y-11,4X-7,"="
+Mat N[X,Y]=43×Text 6Y-11,4X-7,"H"
+Mat N[X,Y]=23×Goto 3
+X=U And Y=V×Goto 2
+X+1ãX
+Text 6Y-11,4X-7,"#E6A6"
+IfEnd
+Next
+IfEnd
+
+'Meme chose pour la gauche
+If K=38 And XÈ1
+Then 
+For 1ãI To 31
+If XÈ1
+Then 
+If Mat N[X-1,Y]È29 And Mat N[X-1,Y]È19 And Mat N[X-1,Y]È17 And Mat N[X-1,Y]È11 And Mat N[X-1,Y]È43
+Then Text 6Y-11,4X-7," "
+Mat N[X,Y]=19×Text 6Y-11,4X-7,"#E69D"
+Mat N[X,Y]=17×Text 6Y-11,4X-7,"#E69C"
+Mat N[X,Y]=13×Text 6Y-11,4X-7,"#E69A"
+Mat N[X,Y]=11×Text 6Y-11,4X-7,"#E69B"
+Mat N[X,Y]=41×Text 6Y-11,4X-7,"="
+Mat N[X,Y]=43×Text 6Y-11,4X-7,"H"
+Mat N[X,Y]=29×Goto 3
+X=U And Y=V×Goto 2
+X-1ãX
+Text 6Y-11,4X-7,"#E6A6"
+IfEnd
+IfEnd
+Next
+IfEnd
+Goto 1
+
+'Marqueur victoire
+Lbl 2
+'Effacer le texte
+ClrText
+'Afficher "YOU WIN"
+Locate 7,4,"YOU WIN"
